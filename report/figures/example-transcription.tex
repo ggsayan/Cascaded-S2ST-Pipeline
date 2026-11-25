@@ -1,0 +1,26 @@
+% Worked example, Stage 1: the audio of the clip and the text transcribed from it.
+% The x axis is in seconds (1 s = 2.1 cm).
+\begin{tikzpicture}[x=2.1cm]
+  \pgfmathtruncatemacro\lastsecond{\clipduration}
+  \pgfmathsetmacro\middle{\clipduration/2}
+
+  % Audio envelope of the clip
+  \begin{scope}[yscale=0.6]
+    \fill[black!25] plot file {figures/data/original-envelope.dat} -- cycle;
+  \end{scope}
+  \node[font=\footnotesize\itshape, text=black!60, anchor=south west] at (0,0.75)
+    {audio envelope of the clip};
+
+  % Time axis
+  \draw[black!60] (0,-0.7) -- (\clipduration,-0.7);
+  \foreach \t in {0,...,\lastsecond}
+    \draw[black!60] (\t,-0.7) -- ++(0,-0.08)
+      node[below, font=\scriptsize] {\t\,s};
+
+  % Transcription
+  \draw[-{Stealth[length=2.5mm]}, line width=1pt] (\middle,-1.15) -- (\middle,-1.95)
+    node[midway, right, font=\footnotesize\itshape, text=black!65] {transcription model};
+  \node[draw=blue!55!black, fill=blue!5, rounded corners=3pt, text width=13.2cm,
+        align=center, inner sep=6pt, anchor=north] at (\middle,-2.05)
+    {\bn গ্রেগরির কাছ থেকে এখনও উত্তর পেলাম না সে কি তাহলে ইংল্যাণ্ডে নেই};
+\end{tikzpicture}

@@ -1,0 +1,56 @@
+% The five stages of the pipeline, with romanization as a side branch.
+\begin{tikzpicture}[
+  stage/.style={draw=blue!55!black, rounded corners=4pt, fill=blue!7, line width=0.8pt,
+                minimum width=10.9cm, minimum height=2.0cm, inner sep=6pt,
+                execute at begin node={\hyphenpenalty 10000\relax}},
+  rule/.style={stage, draw=orange!70!black, fill=orange!10},
+  io/.style={draw=black!60, rounded corners=10pt, fill=black!5, line width=0.8pt,
+             text width=5.2cm, minimum height=1.0cm, align=center, font=\small},
+  data/.style={font=\footnotesize\itshape, text=black!70, anchor=west, align=left, text width=6.6cm},
+  arr/.style={-{Stealth[length=3mm]}, line width=1pt},
+  title/.style={font=\bfseries\large}
+]
+% ---- nodes ----
+\node[io] (in) at (0,0) {\faIcon{microphone}\ \textbf{Input:} Bengali speech clip\\ \footnotesize (the original recording)};
+
+\node[stage] (asr) at (0,-2.4) {\stagecontent{blue!55!black}{\faIcon{file-alt}}{1. Transcription}
+  {Converts the Bengali speech into Bengali text written in native script.}};
+
+% Romanization forms a side branch; the transcript itself goes straight to Stage 3.
+\node[rule, minimum width=6.5cm] (rom) at (2.2,-5.2) {\stagecontent[4.6cm]{orange!70!black}{\faIcon{font}}{2. Romanization}
+  {Rewrites each word in Latin letters for the aligner.}};
+
+\node[stage] (pro) at (0,-8.0) {\stagecontent{blue!55!black}{\faIcon{wave-square}}{3. Alignment and prosody marking}
+  {Finds when each word starts and ends, then inserts \texttt{,} for short pauses and \texttt{|} for
+  long pauses; also measures loudness and elongated words.}};
+
+\node[stage] (tr) at (0,-10.8) {\stagecontent{blue!55!black}{\faIcon{language}}{4. Translation}
+  {Translates the pause-marked Bengali text into English.}};
+
+\node[stage] (tts) at (0,-13.6) {\stagecontent{blue!55!black}{\faIcon{volume-up}}{5. Voice-cloned speech synthesis}
+  {Speaks the English text in the original speaker's voice, copied zero-shot from the input clip.}};
+
+\node[io] (out) at (0,-16.1) {\faIcon{headphones}\ \textbf{Output:} English speech\\ \footnotesize in the original speaker's voice};
+
+% ---- main flow with data labels ----
+\draw[arr] (in)  -- node[data, xshift=2mm]{audio} (asr);
+\draw[arr] (asr.south -| rom) -- node[data, xshift=2mm, text width=3cm]{Bengali words} (rom);
+\draw[arr] (rom) -- node[data, xshift=2mm, text width=3cm]{romanized words} (rom.south |- pro.north);
+\draw[arr] (asr.south -| -3.8,0) -- node[data, xshift=2mm, text width=2.4cm]{Bengali text, no punctuation} (pro.north -| -3.8,0);
+\draw[arr] (pro) -- node[data, xshift=2mm]{Bengali sentence with pause markers} (tr);
+\draw[arr] (tr)  -- node[data, xshift=2mm]{English translation} (tts);
+\draw[arr] (tts) -- node[data, xshift=2mm]{synthesized audio} (out);
+
+% the aligner also needs the audio
+\draw[arr] (in.east) -- (6.3,0) |- (pro.east);
+\node[font=\footnotesize\itshape, text=black!70, rotate=90, anchor=south] at (6.3,-4.0) {audio};
+
+% ---- side inputs ----
+\draw[arr, dashed, black!55] (in.west) -- (-6.6,0) |- ([yshift=4mm]tts.west);
+\node[font=\footnotesize\itshape, text=black!65, rotate=90, anchor=south] at (-6.6,-6.8)
+  {original clip reused as the voice reference};
+
+\draw[arr, dashed, black!55] ([yshift=-4mm]pro.west) -- (-5.8,-8.4) |- ([yshift=-4mm]tts.west);
+\node[font=\footnotesize\itshape, text=black!65, rotate=90, anchor=south] at (-5.8,-11.0)
+  {marked Bengali as transcript};
+\end{tikzpicture}

@@ -1,0 +1,35 @@
+%=====================================================================
+\section{Overview}
+%=====================================================================
+
+The central idea is that a plain transcript loses the speaker's rhythm. Automatic transcripts contain no punctuation, so the translator cannot tell where one thought ends and the next begins, and the speech synthesizer has no cue for where to pause. Recovering the pauses from the audio and writing them back into the text is intended to supply this information to both downstream models.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.2cm}
+  >{\raggedright\arraybackslash}p{4.4cm} >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{4.1cm}@{}}
+\toprule
+\textbf{Stage} & \textbf{Model} & \textbf{Type} & \textbf{Input $\rightarrow$ output} \\
+\midrule
+Transcription & \model{indic-transcribe-core}\newline\source{bodhan-ai}~\cite{bodhan-transcribe}
+  & Speech recognition model for Indic languages
+  & Bengali speech $\rightarrow$ Bengali text \\
+Romanization & \model{uroman}\newline\source{isi-nlp}~\cite{hermjakob2018uroman}
+  & Rule-based universal romanizer
+  & Bengali text $\rightarrow$ Latin-script text \\
+Alignment and prosody marking & \model{MMS\_FA}\newline\source{torchaudio}~\cite{pratap2024mms,yang2022torchaudio}
+  & Multilingual acoustic model trained with CTC~\cite{graves2006ctc} on romanized text, followed by rule-based signal analysis
+  & Speech, romanized words and Bengali text $\rightarrow$ pause-marked Bengali text \\
+Translation & \model{indic-translate}\newline\source{bodhan-ai}~\cite{bodhan-translate}
+  & Instruction-following multilingual language model
+  & Bengali text $\rightarrow$ English text \\
+Speech synthesis & \model{higgs-audio-v3-\allowbreak tts-4b-transformers}\newline\source{multimodalart}~\cite{multimodalart-higgs}
+  & Zero-shot voice-cloning speech synthesis model
+  & English text and reference speech $\rightarrow$ English speech \\
+\bottomrule
+\end{tabularx}
+\caption{Models used in the pipeline.}
+\label{tab:models}
+\end{table}

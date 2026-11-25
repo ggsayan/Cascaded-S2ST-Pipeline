@@ -1,0 +1,18 @@
+% Worked example, Stage 2: each Bengali word above its romanized form.
+% Words are laid out in a grid of 6 columns; lossy romanizations are outlined in red.
+\begin{tikzpicture}[
+    cell/.style={rounded corners=2pt, minimum width=2.3cm, minimum height=1.35cm},
+    ok/.style={draw=blue!55!black, text=blue!55!black},
+    lossy/.style={draw=red!70!black, fill=red!6, text=red!70!black},
+  ]
+  \foreach [count=\i from 0] \bengali/\romanized/\note in \romanization {
+    \pgfmathtruncatemacro\col{mod(\i,6)}
+    \pgfmathtruncatemacro\row{div(\i,6)}
+    \begin{scope}[shift={({\col*2.45},{-\row*1.55})}]
+      \node[cell, \note] at (0,-0.2) {};
+      \node at (0,0.08) {\bn \bengali};
+      \draw[-{Stealth[length=1.5mm]}, \note] (0,-0.12) -- (0,-0.36);
+      \node[font=\scriptsize\ttfamily, \note, draw=none, fill=none] at (0,-0.55) {\romanized};
+    \end{scope}
+  }
+\end{tikzpicture}

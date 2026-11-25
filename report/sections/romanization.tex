@@ -1,0 +1,13 @@
+%=====================================================================
+\section{Romanization}
+%=====================================================================
+
+The forced aligner used in the next stage was trained on romanized text, and it only recognizes the Latin letters a-z and the apostrophe. Each Bengali word is therefore converted to a Latin spelling by the romanizer (Table~\ref{tab:models}), and any remaining characters outside that set are removed. Words keep a link back to their original Bengali form, so that later stages can work with the native script again.
+
+\begin{example}[: romanization]
+The diagram shows each Bengali word above its romanized form. The two words outlined in red are English names written in Bengali script. \textbf{Neither romanization matches the English pronunciation}, and the doubled letters in \texttt{inglyaanndde} make the word look longer than it sounds.
+
+\begin{center}
+\input{figures/example-romanization}
+\end{center}
+\end{example}

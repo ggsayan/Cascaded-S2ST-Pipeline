@@ -1,0 +1,20 @@
+%=====================================================================
+\section{Translation}
+%=====================================================================
+
+Translation is performed by the translation model (Table~\ref{tab:models}). The model receives a one-line instruction, \emph{``Translate the following text into English''}, followed by the Bengali text. The translation is generated greedily, without sampling, so the same input always gives the same output.
+
+Two versions of the sentence are translated:
+\begin{itemize}[nosep]
+  \item The \textbf{clean} sentence is the transcript without any markers.
+  \item The \textbf{marked} sentence contains the pause markers from the alignment and prosody marking stage.
+\end{itemize}
+Comparing the two versions shows the effect of the markers on the translation of the example. The marked translation is used for synthesis.
+
+\begin{example}[: translation]
+The diagram aligns the marked Bengali with both English translations, and the punctuation and capital letters that the translator added are highlighted. \textbf{Without the marker, the question was no longer marked as a question.} For this clip, the output with the marker is consistent with the intended effect of the pause markers.
+
+\begin{center}
+\input{figures/example-translation}
+\end{center}
+\end{example}
