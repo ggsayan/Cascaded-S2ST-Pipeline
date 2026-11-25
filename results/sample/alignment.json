@@ -1,0 +1,118 @@
+{
+    "speech_start": 0.622,
+    "speech_end": 5.315,
+    "score_mean": 0.87,
+    "score_min": 0.52,
+    "score_max": 1.0,
+    "dropped": [],
+    "words": [
+        {
+            "#": 0,
+            "word": "gregarir",
+            "native": "গ্রেগরির",
+            "start": 0.622,
+            "end": 1.103,
+            "dur": 0.481,
+            "score": 0.92
+        },
+        {
+            "#": 1,
+            "word": "kaachh",
+            "native": "কাছ",
+            "start": 1.143,
+            "end": 1.384,
+            "dur": 0.241,
+            "score": 0.64
+        },
+        {
+            "#": 2,
+            "word": "theke",
+            "native": "থেকে",
+            "start": 1.404,
+            "end": 1.625,
+            "dur": 0.221,
+            "score": 1.0
+        },
+        {
+            "#": 3,
+            "word": "ekhanao",
+            "native": "এখনও",
+            "start": 1.805,
+            "end": 2.086,
+            "dur": 0.281,
+            "score": 0.9
+        },
+        {
+            "#": 4,
+            "word": "uttar",
+            "native": "উত্তর",
+            "start": 2.166,
+            "end": 2.387,
+            "dur": 0.221,
+            "score": 1.0
+        },
+        {
+            "#": 5,
+            "word": "pelaam",
+            "native": "পেলাম",
+            "start": 2.427,
+            "end": 2.708,
+            "dur": 0.281,
+            "score": 0.98
+        },
+        {
+            "#": 6,
+            "word": "naa",
+            "native": "না",
+            "start": 2.788,
+            "end": 2.888,
+            "dur": 0.1,
+            "score": 0.99
+        },
+        {
+            "#": 7,
+            "word": "se",
+            "native": "সে",
+            "start": 3.871,
+            "end": 3.971,
+            "dur": 0.1,
+            "score": 0.52
+        },
+        {
+            "#": 8,
+            "word": "ki",
+            "native": "কি",
+            "start": 4.051,
+            "end": 4.132,
+            "dur": 0.08,
+            "score": 0.98
+        },
+        {
+            "#": 9,
+            "word": "taahale",
+            "native": "তাহলে",
+            "start": 4.172,
+            "end": 4.453,
+            "dur": 0.281,
+            "score": 0.93
+        },
+        {
+            "#": 10,
+            "word": "inglyaanndde",
+            "native": "ইংল্যাণ্ডে",
+            "start": 4.533,
+            "end": 4.954,
+            "dur": 0.421,
+            "score": 0.61
+        },
+        {
+            "#": 11,
+            "word": "nei",
+            "native": "নেই",
+            "start": 5.074,
+            "end": 5.315,
+            "dur": 0.241,
+            "score": 0.92
+        }
+    ]
+}

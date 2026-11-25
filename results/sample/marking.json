@@ -1,0 +1,135 @@
+{
+    "text": "গ্রেগরির কাছ থেকে এখনও উত্তর পেলাম না সে কি তাহলে ইংল্যাণ্ডে নেই",
+    "text_marked": "গ্রেগরির কাছ থেকে এখনও উত্তর পেলাম না | সে কি তাহলে ইংল্যাণ্ডে নেই",
+    "roman_marked": "gregarir kaachh theke ekhanao uttar pelaam naa | se ki taahale inglyaanndde nei",
+    "pauses": [
+        {
+            "before": "সে",
+            "start": 2.888,
+            "end": 3.871,
+            "length": 0.983,
+            "type": "long"
+        }
+    ],
+    "words": [
+        {
+            "#": 0,
+            "word": "গ্রেগরির",
+            "loud_z": 0.96,
+            "db_vs_mean": 2.1,
+            "drag_z": 3.58,
+            "x_expected": 1.42,
+            "labels": [
+                "loud",
+                "dragged"
+            ]
+        },
+        {
+            "#": 1,
+            "word": "কাছ",
+            "loud_z": -0.02,
+            "db_vs_mean": -0.0,
+            "drag_z": -0.44,
+            "x_expected": 0.95,
+            "labels": []
+        },
+        {
+            "#": 2,
+            "word": "থেকে",
+            "loud_z": 0.24,
+            "db_vs_mean": 0.5,
+            "drag_z": 0.37,
+            "x_expected": 1.04,
+            "labels": []
+        },
+        {
+            "#": 3,
+            "word": "এখনও",
+            "loud_z": -0.11,
+            "db_vs_mean": -0.3,
+            "drag_z": -0.45,
+            "x_expected": 0.95,
+            "labels": []
+        },
+        {
+            "#": 4,
+            "word": "উত্তর",
+            "loud_z": -0.67,
+            "db_vs_mean": -1.5,
+            "drag_z": 0.37,
+            "x_expected": 1.04,
+            "labels": []
+        },
+        {
+            "#": 5,
+            "word": "পেলাম",
+            "loud_z": -0.26,
+            "db_vs_mean": -0.6,
+            "drag_z": 0.9,
+            "x_expected": 1.11,
+            "labels": []
+        },
+        {
+            "#": 6,
+            "word": "না",
+            "loud_z": -2.87,
+            "db_vs_mean": -6.3,
+            "drag_z": -1.82,
+            "x_expected": 0.79,
+            "labels": [
+                "soft"
+            ]
+        },
+        {
+            "#": 7,
+            "word": "সে",
+            "loud_z": 0.52,
+            "db_vs_mean": 1.1,
+            "drag_z": 1.54,
+            "x_expected": 1.18,
+            "labels": [
+                "dragged"
+            ]
+        },
+        {
+            "#": 8,
+            "word": "কি",
+            "loud_z": 0.72,
+            "db_vs_mean": 1.6,
+            "drag_z": -0.37,
+            "x_expected": 0.96,
+            "labels": []
+        },
+        {
+            "#": 9,
+            "word": "তাহলে",
+            "loud_z": 1.2,
+            "db_vs_mean": 2.7,
+            "drag_z": -0.45,
+            "x_expected": 0.95,
+            "labels": [
+                "loud"
+            ]
+        },
+        {
+            "#": 10,
+            "word": "ইংল্যাণ্ডে",
+            "loud_z": 0.1,
+            "db_vs_mean": 0.2,
+            "drag_z": -1.47,
+            "x_expected": 0.83,
+            "labels": []
+        },
+        {
+            "#": 11,
+            "word": "নেই",
+            "loud_z": 0.19,
+            "db_vs_mean": 0.4,
+            "drag_z": 7.66,
+            "x_expected": 1.9,
+            "labels": [
+                "dragged"
+            ]
+        }
+    ]
+}
