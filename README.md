@@ -1,6 +1,6 @@
 # Cascaded Bengali-to-English Speech Translation Pipeline
 
-Code, results and report source for a cascaded pipeline that translates Bengali speech into English speech in the original speaker's voice. The pipeline transcribes the clip, romanizes the words, aligns them to the audio and marks the speaker's pauses, translates the pause-marked text, and synthesizes the translation with zero-shot voice cloning.
+Code, results and report for a cascaded pipeline that translates Bengali speech into English speech in the original speaker's voice. The pipeline transcribes the clip, romanizes the words, aligns them to the audio and marks the speaker's pauses, translates the pause-marked text, and synthesizes the translation with zero-shot voice cloning.
 
 ## Models
 

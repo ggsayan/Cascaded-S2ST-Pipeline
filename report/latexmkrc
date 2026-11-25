@@ -1,2 +1,0 @@
-# Build with XeLaTeX (fontspec + Bengali script need it; pdflatex fails)
-$pdf_mode = 5;
